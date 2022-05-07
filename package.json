@@ -1,0 +1,30 @@
+{
+	"name": "@sunafterrainwm/winston-format-remove-telegram-apitoken",
+	"description": "remove telegram apitoken from log",
+	"author": "sunafterrainwm <sunafterrainwm@gmail.com>",
+	"license": "MIT",
+	"version": "1.0.0",
+	"main": "index.js",
+	"typings": "index.d.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"@types/lodash": "^4.14.182",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "^17.0.31",
+		"eslint": "^8.15.0",
+		"eslint-config-wikimedia": "^0.22.1",
+		"lodash": "^4.17.21",
+		"mocha": "^10.0.0",
+		"winston": "^3.7.2"
+	},
+	"peerDependencies": {
+		"lodash": ">3.0.0",
+		"winston": ">3.0.0"
+	},
+	"keywords": [
+		"winston",
+		"telegram"
+	]
+}
