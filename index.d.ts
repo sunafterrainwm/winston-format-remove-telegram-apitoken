@@ -1,22 +1,26 @@
 import Logform from "logform";
 
-declare class RemoveToken extends Logform.Format {
-	// constructor(opts?: config): RemoveToken;
-	urlReg: RegExp;
-	config: RemoveTokenConfig;
-}
+declare function removeToken(options?: removeToken.RemoveTokenOptions): removeToken.Format;
+declare namespace removeToken {
+	interface RemoveTokenOptions {
+		/**
+		 * Telegram bot api root, without /.
+		 */
+		apiRoot?: string;
+		/**
+		 * Remove full api url instead of remove api token.
+		 */
+		removeFullApiUrl?: boolean;
+	}
 
-interface RemoveTokenConfig {
-	/**
-	 * Telegram bot api root, without /.
-	 */
-	apiRoot?: string;
-	/**
-	 * Remove full api url instead of remove api token.
-	 */
-	removeFullApiUrl?: boolean;
-}
+	class Format extends Logform.Format {
+		constructor(options?: RemoveTokenOptions);
+		options: RemoveTokenOptions;
+	}
 
-declare function removeToken( options?: RemoveTokenConfig ): RemoveToken;
+	function deToken(string: string, options?: RemoveTokenOptions): string;
+
+	const defaultApiUrl: string;
+}
 
 export = removeToken;
