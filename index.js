@@ -53,7 +53,7 @@ class Format {
 	 * @return {TransformableInfo}
 	 */
 	transform( info ) {
-		if ( !info.message ) {
+		if ( typeof info.message !== 'string' && !info.message ) {
 			const error = new Error( 'Fail to parse info json: ' + deToken( util.inspect( info ), this.options ) );
 			process.nextTick( function () {
 				throw error;
